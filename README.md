@@ -8,7 +8,7 @@ Data from [Data.gov](data.gov)
 
 ## Data
 
-Data is very unique there is alot of repitition. Better data could be found and plugged in I guess?
+Data isn't very unique there is alot of repitition. Better data could be found and models adjusted in I guess?
 
 ## Search
 
