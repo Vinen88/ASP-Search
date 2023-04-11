@@ -18,8 +18,7 @@ namespace ASPSearch.Extensions
                 settings = settings.DefaultIndex(defaultIndex);
 
             // The authentication options below are set if you have non-null/empty
-            // settings in the configuration.  These are just samples -- there are
-            // other authentication methods available.
+            // settings in the configuration. 
             var apiKeyId = configuration["ElasticsearchSettings:apiKeyId"];
             var apiKey = configuration["ElasticsearchSettings:apiKey"];
 

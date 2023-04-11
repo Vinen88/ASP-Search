@@ -45,13 +45,6 @@ namespace ASPSearch.HostedServices
                             .Stemmer("english_possessive_stemmer", st => st
                                 .Language("possessive_english")
                             )
-                            .Synonym("book_synonyms", st => st
-                                // If you have a lot of synonyms, it's probably better to create a synonyms
-                                // text file and use .SynonymsPath here instead.
-                                .Synonyms(
-                                    "haphazard,indiscriminate,erratic",
-                                    "incredulity,amazement,skepticism")
-                            )
                         )
                         .Analyzers(aa => aa
                             .Custom("light_english", ca => ca
@@ -68,8 +61,7 @@ namespace ASPSearch.HostedServices
                             )
                             .Custom("full_english_synopsis", ca => ca
                                 .Tokenizer("standard")
-                                .Filters("book_synonyms",
-                                        "english_possessive_stemmer",
+                                .Filters("english_possessive_stemmer",
                                         "lowercase",
                                         "english_stop",
                                         "english_stemmer",

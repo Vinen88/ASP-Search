@@ -40,7 +40,8 @@ namespace ASPSearch.Controllers
                         .Query(q)
                         .Fuzziness(Fuzziness.Auto)
                     )
-                )
+                ).Size(20)
+                .From(0) // Paging, could add var here to finish up
             );
 
             var vm = new SearchViewModel
