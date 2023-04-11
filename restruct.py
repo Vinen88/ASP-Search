@@ -20,6 +20,8 @@ def main ():
         new_item["eligibility"] = item[17]
         new_data.append(new_item) 
         count += 1
+        if count == 2100:
+            break
     json_obj = json.dumps(new_data, indent=4)
     with open("washingtonElectricCarData_restructured.json", "w") as f:
         f.write(json_obj)
