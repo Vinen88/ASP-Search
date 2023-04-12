@@ -6,6 +6,7 @@ ASP.NET core Elasticsearch web based search engine
 
 ### Start Elasticsearch
 
+ - BE SURE TO START THIS FIRST!
  - navigate to folder with docker-compose.yml in it (should be the main folder)
  - ```docker-compose up```
  - give it time to run takes 2-5 minutes to start for me on an older windows machine
