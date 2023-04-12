@@ -22,6 +22,7 @@ ASP.NET core Elasticsearch web based search engine
  - Tesla
  - seatle
  - WA
+
 These should get you enough info and you can have fun after that, data is all electric car data so try searching anything related.
 
 # Data
