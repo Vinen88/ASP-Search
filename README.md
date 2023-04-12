@@ -49,8 +49,7 @@ Data from [Data.gov](data.gov)
 
 ### Search
 
-- Results limited to 40
-- no pagnation, WIP maybe?
+- could be bugs with pagination, it was a last minute addition but from my testing it's working
 - slow start up, not worth fixing as test data loads in.
 
 ### Docker
