@@ -12,13 +12,15 @@ ASP.NET core Elasticsearch web based search engine
 
 ### Start website
  
- - Instructions coming soon 
+ - For simplicity open the .sln file in Visual Studio
+ - run without debugging
+ - will take about a minute to start as it has to load data into Elasticsearch
 
-# data
+# Data
 
 Data from [Data.gov](data.gov)
 
-# useful link
+# Useful Links
 
 - [Elasticsearch and NEST (.NET Client) Cheatsheet](https://github.com/mjebrahimi/Elasticsearch-NEST-CheatSheet-Tutorials/blob/master/README.md)
 
@@ -43,21 +45,20 @@ Data from [Data.gov](data.gov)
 
 ### Data
 
- - Data isn't very unique there is alot of repitition. Better data could be found and plugged in I guess?
+ - Data isn't very unique there is alot of repitition. Better data could be found and models adjusted I guess?
 
 ### Search
 
-- Results limited to 20
+- Results limited to 40
 - no pagnation, WIP maybe?
 - slow start up, not worth fixing as test data loads in.
-- results could probably be in a table instead of a list
 
 ### Docker
 
-- need to dockerize ASP.NET core app 
+- need to dockerize ASP.NET core app Not sure if that would make running it any easier due to HTTPS certs.
 - elasticsearch docker container is quite memory intensive. (around 7GB)
 
-### choices made to make demos easier
+### Choices Made to Make Demo Simpler
 
 - no persistant elastic search data. 
 - data is rebuilt every time program is run

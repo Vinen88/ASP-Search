@@ -23,7 +23,7 @@ namespace ASPSearch.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> Index(string q)
+        public async Task<IActionResult> Index(string q, int from = 0)
         {
             if (string.IsNullOrEmpty(q))
             {
@@ -41,12 +41,13 @@ namespace ASPSearch.Controllers
                         .Fuzziness(Fuzziness.Auto)
                     )
                 ).Size(40)
-                .From(0) // Paging, could add var here to finish up
+                .From(from) // Paging, could add var here to finish up
             );
 
             var vm = new SearchViewModel
             {
-                Term = q
+                Term = q,
+                Page = from // dunno if this will work as I expect?
             };
 
             if (response.IsValid)
