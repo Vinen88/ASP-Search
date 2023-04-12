@@ -40,7 +40,7 @@ namespace ASPSearch.Controllers
                         .Query(q)
                         .Fuzziness(Fuzziness.Auto)
                     )
-                ).Size(20)
+                ).Size(40)
                 .From(0) // Paging, could add var here to finish up
             );
 

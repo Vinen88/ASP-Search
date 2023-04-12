@@ -7,7 +7,7 @@ ASP.NET core Elasticsearch web based search engine
 ### Start Elasticsearch
 
  - navigate to folder with docker-compose.yml in it (should be the main folder)
- - ```bash docker-compose up```
+ - ```docker-compose up```
  - give it time to run takes 2-5 minutes to start for me on an older windows machine
 
 ### Start website
@@ -48,7 +48,7 @@ Data from [Data.gov](data.gov)
 ### Search
 
 - Results limited to 20
-- no pagnation, WIP
+- no pagnation, WIP maybe?
 - slow start up, not worth fixing as test data loads in.
 - results could probably be in a table instead of a list
 
