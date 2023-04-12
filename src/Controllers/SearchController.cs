@@ -23,7 +23,7 @@ namespace ASPSearch.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> Index(string q, int from = 0)
+        public async Task<IActionResult> Index(string q, int page = 1, int pageSize = 30)
         {
             if (string.IsNullOrEmpty(q))
             {
@@ -40,18 +40,34 @@ namespace ASPSearch.Controllers
                         .Query(q)
                         .Fuzziness(Fuzziness.Auto)
                     )
-                ).Size(40)
-                .From(from) // Paging, could add var here to finish up
+                ).Size(pageSize)
+                .From((page - 1) * pageSize) // Paging, could add var here to finish up
             );
-
+            
+      
             var vm = new SearchViewModel
             {
                 Term = q,
-                Page = from // dunno if this will work as I expect?
+                NextPage = page,
+                PageSize = pageSize
             };
+            if (page > 1)
+            {
+               vm.PrevPage = page - 1;
+            }
 
             if (response.IsValid)
+            {
+                if (response.Total > page * pageSize)
+                {
+                    vm.NextPage = page + 1;
+                }
+                else
+                {
+                    vm.NextPage = -1; //there is probably a better way to do this but meh
+                }
                 vm.Results = response.Documents?.ToList();
+            }
             else
                 _logger.LogError(response.OriginalException, "Problem searching Elasticsearch for term {0}", q);
 

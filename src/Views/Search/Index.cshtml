@@ -41,4 +41,32 @@ else
             }
         </tbody>
     </table>
+    <div class="container">
+        <div class="row">
+            <div class="btn-toolbar" role="toolbar">
+                <div class="btn-group mr-2">
+                    @if (Model.PrevPage != 0)
+                    {
+                        <form method="get" action="~/search/">
+                            <input value="@Model.Term" id="q" name="q" type="hidden" class="form-control" aria-label="Search" aria-describedby="search-button">
+                            <input value="@Model.PrevPage" id="page" name="page" type="hidden">
+                            <input value="@Model.PageSize" id="pageSize" name="pageSize" type="hidden">
+                            <button type="submit" class="btn btn-cta btn-dark">Prev</button>
+                        </form>
+                    }
+                </div>
+            </div>
+            <div class="btn-group">
+                @if (Model.NextPage != -1)
+                {
+                    <form method="get" action="~/search/">
+                        <input value="@Model.Term" id="q" name="q" type="hidden" class="form-control" aria-label="Search" aria-describedby="search-button">
+                        <input value="@Model.NextPage" id="page" name="page" type="hidden">
+                        <input value="@Model.PageSize" id="pageSize" name="pageSize" type="hidden">
+                        <button type="submit" class="btn btn-cta btn-dark">Next</button>
+                    </form>
+                }
+            </div>
+        </div>
+    </div>
 }
