@@ -17,6 +17,13 @@ ASP.NET core Elasticsearch web based search engine
  - run without debugging
  - will take about a minute to start as it has to load data into Elasticsearch
 
+### Suggested Search Terms
+ - C-Max
+ - Tesla
+ - seatle
+ - WA
+These should get you enough info and you can have fun after that, data is all electric car data so try searching anything related.
+
 # Data
 
 Data from [Data.gov](data.gov)
